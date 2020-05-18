@@ -3,7 +3,15 @@ const Users = require('../users/users-model');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
+function restricted(req, res, next) {
+  if (req.session && req.session.loggedIn) {
+    next();
+  } else {
+    res.status(401).json({json: 'You cannot pass'});
+  }
+}
+
+router.get('/', restricted, (req, res) => {
   Users.getUsers()
     .then(users => {
       res.status(200).json({data: users});
