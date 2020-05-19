@@ -1,0 +1,21 @@
+{
+  "name": "node_auth",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/karkisunil1200/node_auth.git",
+  "author": "Sunil Karki <karkisunil1200@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "server": "nodemon index.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "knex": "^0.21.1",
+    "sqlite3": "^4.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
